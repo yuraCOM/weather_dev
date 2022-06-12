@@ -1,0 +1,49 @@
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.load {
+    margin-top: 20%;
+}
+.container{
+    flex-direction: row;
+
+}
+.wind{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wind p{
+    margin-left: 5px;
+    margin-bottom: 0px;
+    display: block;
+}
+.sun, .sun div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.sun div p{
+    margin-left: 2px;
+}
+
+.sun div img {
+    width: 50px;
+}
+
+
+@media screen and (max-width: 375px) {
+    .sun,.sun div {
+            flex-wrap: wrap;
+        }
+    .wind{
+        margin-bottom: 5px;
+    }
+    .sun div:first-child {
+       margin-bottom: 15px;
+    }
+}

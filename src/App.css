@@ -1,0 +1,137 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.App .row {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.App .navbar {
+  justify-content: flex-start;
+}
+
+.App .navbar h3{
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.App .sities{
+  margin: 0 10px
+}
+
+.App .info-sity{
+  margin: 0 10px;
+
+}
+
+
+@media screen and (max-width: 375px) {
+.App .row .navbar form{
+  margin: 2px;
+}
+.App .row .navbar input {
+  padding: 0;
+}
+.App .row .navbar button{
+  margin-left: 10px;
+  margin: 0;
+}
+.App .row .navbar h3{
+  font-size: 15px;
+}
+
+
+.App .row button  {
+  font-size: 12px;
+  margin: 15px 2px;
+  padding: 10px 5px;
+  }
+
+  .App .row .navbar button {
+    margin: 0 0 0 5px;
+    padding: 0px 5px;
+  }
+
+  .App .container {
+    padding: 2px;
+  }
+
+  .App .sities{
+    margin: 0 3px;
+  }
+  .App .info-sity{
+    margin: 5px;
+  }
+
+  .App .info-sity H5 {
+    margin-bottom: 0;  }
+
+  .App .info-sity p {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .App .info-sity img {
+    font-size: 12px;
+  }
+
+  .App .addBlock{
+    display: flex;
+  }
+
+  .App .delPlace span{
+    display: none;
+  }
+
+  .App .delPlace::after {
+    content: "X";
+  }
+  
+}
