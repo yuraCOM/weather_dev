@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import MyModal from '../Modal/MyModal';
 import PostServis from '../PostService';
 import './search.css'
 
@@ -8,6 +9,7 @@ const Search = (props) => {
 
     const [value, setValue] = useState("Enter city...");
     const [error, setError] = useState(null)
+    const [activeModal, setActiveModal] = useState(false)
 
     function submitHandler(event) {
         event.preventDefault();
@@ -26,7 +28,6 @@ const Search = (props) => {
                     props.setCurrentPlace(value.trim())
 
                     let allDataTowm = data
-                    // console.log(allDataTowm);
 
                     let towninfo = {
                         name: data.name,
@@ -59,6 +60,11 @@ const Search = (props) => {
 
     return (
         <div className=' container navbar navbar-expand-lg navbar-light bg-light navbarS '>
+            <button className='btn btn-warning' onClick={() => {
+                setActiveModal(true)
+                console.log(activeModal)
+
+            }}>ToDos</button>
             <form className='d-flex' onSubmit={submitHandler}>
                 <input className='form-control me-sm-2' value={value}
                     onFocus={(event) => (event.target.value = "")}
@@ -66,13 +72,13 @@ const Search = (props) => {
                         setValue(event.target.value)
                     }}
                 />
-                <button className='btn btn-secondary my-2 my-sm-0'
-                    type="submit"
-                    onClick={() => {
-                        // setValue("Enter city...")
-                    }}>Search</button>
+                <button className='btn btn-secondary my-2 my-sm-0' type="submit">Search</button>
             </form>
             {error ? <h3 style={{ color: 'red' }} >{error}</h3> : false}
+
+
+
+            <MyModal activeModal={activeModal} setActiveModal={setActiveModal} />
         </div >
     )
 }

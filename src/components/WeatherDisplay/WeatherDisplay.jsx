@@ -9,6 +9,8 @@ import Sunrise from '../images/sunrise.png'
 import Sunset from '../images/sunset.png'
 import Search from "../Search/Search";
 import MyMap from "../Map/MyMap";
+import Tools from "../Tools/Tools";
+
 
 const WeatherDisplay = (props) => {
 
@@ -36,11 +38,13 @@ const WeatherDisplay = (props) => {
       setSunset(Sun(data.sys.sunset))
     })
 
-    if (localStorage.getItem("newPlaces")) {
-      let newPlaces = localStorage.getItem('newPlaces')
-      newPlaces = JSON.parse(newPlaces);
-      setNewPlaces(newPlaces)
-    }
+    // if (localStorage.getItem("newPlaces")) {
+    //   let newPlaces = localStorage.getItem('newPlaces')
+    //   newPlaces = JSON.parse(newPlaces);
+    //   setNewPlaces(newPlaces)
+    // // }
+    setNewPlaces(Tools().getDataLocalStore("newPlaces"))
+
   }, []);
 
   useEffect(() => {
@@ -62,10 +66,10 @@ const WeatherDisplay = (props) => {
     }
   }, [position]);
 
-  function setLocalStore(name, data) {
-    data = JSON.stringify(data);
-    localStorage.setItem(name, data);
-  }
+  // function setLocalStore(name, data) {
+  //   data = JSON.stringify(data);
+  //   localStorage.setItem(name, data);
+  // }
 
 
   function getTime() {
@@ -106,7 +110,7 @@ const WeatherDisplay = (props) => {
             setPosition={setPosition}
             newPlaces={newPlaces}
             setNewPlaces={setNewPlaces}
-            setLocalStore={setLocalStore} al />
+            setLocalStore={Tools.setLocalStore} al />
 
           <div className="container" >
 
@@ -147,7 +151,7 @@ const WeatherDisplay = (props) => {
               <Places {...props} startPlases={newPlaces} currentPlace={currentPlace}
                 setNewPlaces={setNewPlaces} place={currentPlace} newPlace={newPlace}
                 newPlaces={newPlaces}
-                setLocalStore={setLocalStore}
+                setLocalStore={Tools.setLocalStore}
                 setCurrentPlace={setCurrentPlace}>
               </Places>}
 
