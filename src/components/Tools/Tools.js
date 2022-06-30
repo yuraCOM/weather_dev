@@ -1,8 +1,6 @@
 
 import React from 'react'
 
-
-
 const Tools = () => {
 
     function setLocalStore(name, data) {
@@ -19,9 +17,10 @@ const Tools = () => {
         return []
     }
 
-    return ({
-        setLocalStore, getDataLocalStore
-    }
+    return (
+        {
+            setLocalStore, getDataLocalStore
+        }
     )
 }
 

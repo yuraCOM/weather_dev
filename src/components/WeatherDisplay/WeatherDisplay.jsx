@@ -110,7 +110,7 @@ const WeatherDisplay = (props) => {
             setPosition={setPosition}
             newPlaces={newPlaces}
             setNewPlaces={setNewPlaces}
-            setLocalStore={Tools.setLocalStore} al />
+            setLocalStore={Tools().setLocalStore} />
 
           <div className="container" >
 

@@ -21,6 +21,7 @@ const Search = (props) => {
         if (name.trim()) {
             const findTown = PostServis.getTownFind(name.trim())
                 .then((data) => {
+                    console.log(data);
                     if (data) {
                         setError(null)
                     }
